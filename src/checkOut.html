@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang = "pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content = "width=device-width, initial-scale=1">
+        <title>Check-out</title>
+        <link rel = "stylesheet" type = "text/css" href = "style.css">
+        <script src="script.js" defer></script>
+    </head>
+
+    <div class="principal" >
+        <body>Check-out</body>
+    </div>
+
+    <form id="form">
+        Número da reserva:
+        <input type="text" id="numReserva" name = "numeroDaReserva" placeholder="Digite o número da reserva">
+        <input type="submit" value = "Consultar">
+    </form>
+
+    <span id="resultado"></span>
+
+    <button id="consultarTodosOsProdutos" class="favorite styled" type="button" onclick="consultaTodosOsProdutos()">
+    Todos os produtos cadastrados </button>
+    
+    <p id="todosOsProdutos"> Todos os produtos: </p>
+</html>
+
