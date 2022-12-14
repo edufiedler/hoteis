@@ -12,11 +12,12 @@ async function consultaTodosOsProdutos(){
             'Content-Type': 'application/json'
         }
     })
-    console.log(await resp.json())
+    //console.log(await resp.json())
+    
+    let numReserva = await resp.json();
+    //document.getElementById("todosOsProdutos").innerHTML="Todos os produtos: \n" +numReserva;
+    document.getElementById("todosOsProdutos").innerHTML="Todos os produtos: \n" +JSON.stringify(numReserva, null, 3)
 }
-
-
-
 
 var form = document.getElementById('form');
 
