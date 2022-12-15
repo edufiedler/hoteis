@@ -351,7 +351,7 @@ position: relative;
 .body-text-field {
   color: #505050;
   text-align: left;
-  font: var(--body-body, 400 16px/20px "Mulish", sans-serif);
+  font: var(--body-body, 400 16px/20px "Inter", sans-serif);
   position: relative;
   
 }
@@ -514,4 +514,30 @@ flex: 1;
 height: 56px;
 position: relative;
 }
+.search-lista {
+  background: #f3f3f3;
+  border-radius: 8px;
+  padding: 8px 8px 8px 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 256px;
+  position: relative;
+}
 
+
+.button-buscar {
+  background: #4f6aff;
+  border-radius: 12px;
+  padding: 12px 24px 12px 24px;
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 256;
+  position: relative;
+  }
