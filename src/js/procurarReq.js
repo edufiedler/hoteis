@@ -24,7 +24,7 @@ function getDadosReq(){
 async function enviarDadosParaAPI2(requisicao){
   let resultado;
 
-  if(isNaN(requisicao.requisicao_id)) {
+  //if(isNaN(requisicao.requisicao_id)) {
     const resp = await fetch(`http://localhost:3000/requisicoes`, {
         method: 'GET',
         headers: {
@@ -34,7 +34,7 @@ async function enviarDadosParaAPI2(requisicao){
     })
 
     resultado = await resp.json();
-
+  /*
   } else {
     const resp = await fetch(`http://localhost:3000/requisicoes/req/${requisicao.requisicao_id}`, {
         method: 'GET',
@@ -45,7 +45,7 @@ async function enviarDadosParaAPI2(requisicao){
     })
 
     resultado = await resp.json();
-  }
+  }*/
 
   exibeResul(resultado);
 }   
