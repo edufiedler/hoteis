@@ -6,7 +6,7 @@ const router = Router();
 router.get('/', controller.getFunc);
 router.get('/:name', controller.getFuncbyName);
 router.post("/", controller.addFunc);
-router.put(":/funcionario_cpf",controller.atualizarFunc);
+router.put("/:funcionario_cpf",controller.atualizarFunc);
 router.delete("/:funcionario_cpf", controller.excluiFunc)
 // router.get("/", controller.getProducts);
 // router.post("/", controller.addProduct);                //Create

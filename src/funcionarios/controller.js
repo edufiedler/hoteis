@@ -1,4 +1,4 @@
-const pool = require('../db');
+const pool = require('../js/db');
 const queries = require('./queries');
 
 
@@ -21,9 +21,9 @@ const addFunc = (req, res) => {
     const { funcionario_cpf, nom_pnome, nom_snome, sexo, datanasc, endereco, salario, tipodecontrato } = req.body;
 
     pool.query(queries.verificaCPF, [funcionario_cpf], (error, results) => {
-        if (results.rows.length) {
-            res.send("CPF de funcionário já cadastrado")
-        }
+         if (results.rows.length) {
+             res.send("CPF de funcionário já cadastrado")
+         }
         pool.query(queries.addFunc, [funcionario_cpf, nom_pnome, nom_snome, sexo, datanasc, endereco, salario, tipodecontrato], (error, results) => {
             if (error) throw error;
             res.status(201).send("FUncionário adicionado");
@@ -45,12 +45,18 @@ const excluiFunc = (req, res) => {
 }
 
 const atualizarFunc = (req, res) => {
-    const funcionario_cpf = parseInt(req.params.id);
-    const { name } = req.body;
+    const funcionario_cpf = parseInt(req.params.funcionario_cpf);
+    const { nom_pnome } = req.body.nom_pnome;
+    const { nom_snome } = req.body.nom_snome;
+    const { sexo } = req.body.sexo;
+    const { datanasc } = req.body.datanasc;
+    const { endereco } = req.body.endereco;
+    const { salario } = req.body.salario;
+    const { tipodecontrato } = req.body.salario;
     pool.query(queries.verificaCPF, [funcionario_cpf], (error, results) => {
         const semFunc = !results.rows.length;
         if (semFunc) res.send("Funcionário não existe");
-        pool.query(queries.atualizarFunc, [name, funcionario_cpf ], (error, results) => {
+        pool.query(queries.atualizarFunc, [nom_pnome, nom_snome, sexo, datanasc, endereco, salario, tipodecontrato, funcionario_cpf ], (error, results) => {
             // name = $1, funcionario_cpf = $2
             if(error) throw error;
             res.status(200).send("Funcionário atualizado");
