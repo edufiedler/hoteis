@@ -1,6 +1,6 @@
 
 const getReq = "SELECT * FROM public.requisicao";
-const getReqbyFunc = "SELECT * FROM public.requisicao WHERE requisicao_id IN (SELECT requisicao_id FROM public.recebe_requisicao WHERE funcionario_cpf = $1)";
+const getReqbyFunc = "SELECT * FROM public.requisicao WHERE requisicao_id IN (SELECT requisicao_id FROM public.recebe_requisicao WHERE funcionario_cpf = $1 AND tipo = 'F')";
 const getFuncbyReq = "SELECT * FROM public.funcionario where funcionario_cpf in (SELECT funcionario_cpf FROM public.recebe_requisicao WHERE requisicao_id = $1)";
 const addFuncinReq = "INSERT INTO public.recebe_requisicao(funcionario_cpf, requisicao_id) VALUES ($1, $2)";
 const getReqbyId = "SELECT * FROM public.requisicao WHERE requisicao_id = $1";
