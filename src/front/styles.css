@@ -159,7 +159,7 @@ height: 114px;
 position: absolute;
 left: -18px;
 top: -14px;
-background: url("imgs/user-image.png");
+background: url("imgs/user-photo.png");
 }
 .user-description {
 display: flex;
