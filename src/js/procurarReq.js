@@ -25,7 +25,7 @@ async function enviarDadosParaAPI2(requisicao){
   let resultado;
 
   if(isNaN(requisicao.requisicao_id)) {
-    const resp = await fetch(`http://localhost:3000/requisicoes}`, {
+    const resp = await fetch(`http://localhost:3000/requisicoes`, {
         method: 'GET',
         headers: {
             Accept: 'application/json',
