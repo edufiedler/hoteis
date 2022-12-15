@@ -22,16 +22,32 @@ function getDadosReq(){
 }
 
 async function enviarDadosParaAPI2(requisicao){
-  const resp = await fetch(`http://localhost:3000/requisicoes/req/${requisicao.requisicao_id}`, {
-      method: 'GET',
-      headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json'
-      },
-  })
+  let resultado;
 
-    let resultado = await resp.json();
-    exibeResul(resultado);
+  if(requisicao.requisicao_id == '') {
+    const resp = await fetch(`http://localhost:3000/requisicoes}`, {
+        method: 'GET',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+        },
+    })
+
+    resultado = await resp.json();
+
+  } else {
+    const resp = await fetch(`http://localhost:3000/requisicoes/req/${requisicao.requisicao_id}`, {
+        method: 'GET',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+        },
+    })
+
+    resultado = await resp.json();
+  }
+
+  exibeResul(resultado);
 }   
 
 async function exibeResul(resultado){
