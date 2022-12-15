@@ -84,12 +84,15 @@
     </div>
   </header>
 
-    <div class="div-1">
-      <div class="actions-lista">
-        <div class="h1">Requisições</div>
-    
-        <a href="adicionar-requisicao.html">
-        <div class="button-primario">
+  <div class="div-1">
+    <div class="actions-lista">
+      <div class="h1">Requisições</div>
+        <div class="search-lista">
+          <input class="body-text-field" style="border:none; background: transparent; outline: 0;" type="number" id="requisicao_id" class="search-lista" name = "requisicao_id" placeholder="Buscar por ID da requisição ">
+          </input>
+        </div>
+        <div class="button-buscar">
+          <button class="h3-button" type="button" style="border:none; background: transparent; outline: 0; cursor: pointer" id="salvar">Buscar</button>
           <svg
             class="icon"
             width="24"
@@ -99,44 +102,61 @@
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M12 19C11.7167 19 11.4793 18.904 11.288 18.712C11.096 18.5207 11 18.2833 11 18V13H6C5.71667 13 5.479 12.904 5.287 12.712C5.09567 12.5207 5 12.2833 5 12C5 11.7167 5.09567 11.479 5.287 11.287C5.479 11.0957 5.71667 11 6 11H11V6C11 5.71667 11.096 5.479 11.288 5.287C11.4793 5.09567 11.7167 5 12 5C12.2833 5 12.521 5.09567 12.713 5.287C12.9043 5.479 13 5.71667 13 6V11H18C18.2833 11 18.5207 11.0957 18.712 11.287C18.904 11.479 19 11.7167 19 12C19 12.2833 18.904 12.5207 18.712 12.712C18.5207 12.904 18.2833 13 18 13H13V18C13 18.2833 12.9043 18.5207 12.713 18.712C12.521 18.904 12.2833 19 12 19Z"
-              fill="white"
+              d="M18.9 20.3L13.3 14.7C12.8 15.1 12.225 15.4167 11.575 15.65C10.925 15.8833 10.2333 16 9.5 16C7.68333 16 6.146 15.371 4.888 14.113C3.62933 12.8543 3 11.3167 3 9.5C3 7.68333 3.62933 6.14567 4.888 4.887C6.146 3.629 7.68333 3 9.5 3C11.3167 3 12.8543 3.629 14.113 4.887C15.371 6.14567 16 7.68333 16 9.5C16 10.2333 15.8833 10.925 15.65 11.575C15.4167 12.225 15.1 12.8 14.7 13.3L20.325 18.925C20.5083 19.1083 20.6 19.3333 20.6 19.6C20.6 19.8667 20.5 20.1 20.3 20.3C20.1167 20.4833 19.8833 20.575 19.6 20.575C19.3167 20.575 19.0833 20.4833 18.9 20.3V20.3ZM9.5 14C10.75 14 11.8127 13.5627 12.688 12.688C13.5627 11.8127 14 10.75 14 9.5C14 8.25 13.5627 7.18733 12.688 6.312C11.8127 5.43733 10.75 5 9.5 5C8.25 5 7.18733 5.43733 6.312 6.312C5.43733 7.18733 5 8.25 5 9.5C5 10.75 5.43733 11.8127 6.312 12.688C7.18733 13.5627 8.25 14 9.5 14Z"
+              fill="#ffffff"
             />
           </svg>
-    
-          <div class="h3-button">Nova requisição</div>
         </div>
-      </a>
-      </div>
-    
-      <div class="lista">
-        <div class="header-lista">
-          <div class="body-bold">ID</div>
-    
-          <div class="body-bold">Tipo</div>
-    
-          <div class="body-bold">Data de Abertura</div>
-    
-          <div class="body-bold">Status</div>
-    
-          <div class="body-bold">Ação</div>
+        <div class="search-lista">
+          <input class="body-text-field" style="border:none; background: transparent; outline: 0;" type="number" id="funcionario_cpf" class="search-lista" name = "funcionario_cpf" placeholder="Buscar por CPF do funcionário ">
+          </input>
         </div>
-    
-        <div class="item-lista">
-          <div class="body-lista">1</div>
-    
-          <div class="body-lista">C</div>
-    
-          <div class="body-lista">2022-10-09</div>
-    
-          <div class="body-lista">Aberta</div>
-    
-          <a href="editar-requisicao.html">
-          <div class="body-lista">Ver mais</div>
-        </a>
+        <div class="button-buscar">
+          <button class="h3-button" type="button" style="border:none; background: transparent; outline: 0; cursor: pointer" id="salvar">Buscar</button>
+          <svg
+            class="icon"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18.9 20.3L13.3 14.7C12.8 15.1 12.225 15.4167 11.575 15.65C10.925 15.8833 10.2333 16 9.5 16C7.68333 16 6.146 15.371 4.888 14.113C3.62933 12.8543 3 11.3167 3 9.5C3 7.68333 3.62933 6.14567 4.888 4.887C6.146 3.629 7.68333 3 9.5 3C11.3167 3 12.8543 3.629 14.113 4.887C15.371 6.14567 16 7.68333 16 9.5C16 10.2333 15.8833 10.925 15.65 11.575C15.4167 12.225 15.1 12.8 14.7 13.3L20.325 18.925C20.5083 19.1083 20.6 19.3333 20.6 19.6C20.6 19.8667 20.5 20.1 20.3 20.3C20.1167 20.4833 19.8833 20.575 19.6 20.575C19.3167 20.575 19.0833 20.4833 18.9 20.3V20.3ZM9.5 14C10.75 14 11.8127 13.5627 12.688 12.688C13.5627 11.8127 14 10.75 14 9.5C14 8.25 13.5627 7.18733 12.688 6.312C11.8127 5.43733 10.75 5 9.5 5C8.25 5 7.18733 5.43733 6.312 6.312C5.43733 7.18733 5 8.25 5 9.5C5 10.75 5.43733 11.8127 6.312 12.688C7.18733 13.5627 8.25 14 9.5 14Z"
+              fill="#ffffff"
+            />
+          </svg>
         </div>
       </div>
     </div>
+  
+    <div class="lista">
+      <div class="header-lista">
+        <div class="body-bold">ID</div>
+  
+        <div class="body-bold">Tipo</div>
+  
+        <div class="body-bold">Data de Abertura</div>
+  
+        <div class="body-bold">Status</div>
+  
+        <div class="body-bold">CPF</div>
+      </div>
+  
+      <div class="item-lista">
+        <div class="body-lista">1</div>
+  
+        <div class="body-lista">C</div>
+  
+        <div class="body-lista">2022-10-09</div>
+  
+        <div class="body-lista">Aberta</div>
+  
+        <div class="body-lista">111.111.111-11</div>
+      </div>
+    </div>
+  </div>
+  
     
 
 </body>
