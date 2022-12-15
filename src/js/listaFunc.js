@@ -15,9 +15,10 @@ async function consultaTodosOsProdutos(){
 
     todosFuncionarios.forEach(funcionario => {
         var data = funcionario.datanasc;
+        var cpf = funcionario.funcionario_cpf;
         const novoFunc = `
         <div class="item-lista">
-        <div class="body-lista">${funcionario.nom_pnome} ${funcionario.nom_snome}</div>
+        <div class="body-lista" onClick="console.log( ${cpf} )">${funcionario.nom_pnome} ${funcionario.nom_snome}</div>
         <div class="body-lista">${funcionario.funcionario_cpf} </div>
         <div class="body-lista">${funcionario.sexo} </div>
         <div class="body-lista"> ${data} </div>

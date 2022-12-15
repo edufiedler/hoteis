@@ -1,13 +1,7 @@
-const btn = document.querySelector('#salvar')
+const btn = document.querySelector('#update')
 
-btn.addEventListener('click', () => {
-    //capturar
-    const funcionario = getDadosForm()
-    //enviar
-    enviarDadosParaAPI(funcionario);
-})
-
-function getDadosForm(){
+function getDadosForm2(){
+    
     const inom_pnome = document.querySelector('#nom_pnome')
     const inom_snome = document.querySelector('#nom_snome')
     const ifuncionario_cpf = document.querySelector('#funcionario_cpf')
@@ -31,21 +25,17 @@ function getDadosForm(){
 
 }
 
-async function enviarDadosParaAPI(funcionario){
-    const resposta = await fetch('http://localhost:3000/funcionarios', {
-        method: 'POST',
+async function enviarDadosParaAPI2(funcionario){
+    const resposta = await fetch(`http://localhost:3000/funcionarios/${funcionario.funcionario_cpf}`, {
+        method: 'PUT',
         headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(funcionario)
     })
-    if(resposta.status === 201){
-        limparCampos()
-        window.location.href = 'checkOut.html'
+    if(resposta.status === 200){
+        window.location.href = 'lista-funcionarios.html'
     } else console.log('Erro ao adicionar funcionário')
 }   
 
-function limparCampos(){
-    document.querySelector('#nom_pnome').value = ''
-}

@@ -2,7 +2,7 @@ const btn = document.querySelector('#salvar')
 
 btn.addEventListener('click', () => {
     //capturar
-    const funcionario = getDadosForm()
+    const funcionario = getDadosForm();
     //enviar
     enviarDadosParaAPI(funcionario);
 })

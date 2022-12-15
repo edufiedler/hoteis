@@ -2,6 +2,8 @@ const express = require('express')
 const cors = require('cors')
 const productsRoutes = require('./src/products/routes');
 const funcionariosRoutes = require('./src/funcionarios/routes')
+const requisicoesRoutes = require('./src/requisicoes/routes')
+
 const app = express();
 const port = 3000;
 
@@ -15,6 +17,8 @@ app.get("/", (req, res) => {
 
 app.use('/api/v1/hoteis', productsRoutes);
 
-app.use('/funcionarios', funcionariosRoutes); 
+app.use('/funcionarios', funcionariosRoutes);
+
+app.use('/requisicoes', requisicoesRoutes); 
 
 app.listen(port, () => console.log(`app listening on port ${port}`));

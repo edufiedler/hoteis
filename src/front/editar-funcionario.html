@@ -6,7 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Funcionário</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
-</head>
+    <script src="../js/updateFunc.js"></script>
+     <script src="../js/deleteFunc.js"></script>  
+    
+
+
+    </head>
 <body>
   <header class="main-header">
     <div class="header">
@@ -148,18 +153,41 @@
               </div>
             </div>
           </div>
-          <div class="actions-edit">
-              <a href="lista-funcionarios.html">
-              <div class="body-under">Excluir</div>
-            </a>
-      
-            <a href="lista-funcionarios.html">
-              <div class="button-primario">
-                <div class="h3-button">Salvar</div>
-              </div>
-            </a>
-            </div>
+          
+           <div class="actions-edit">
+              <!-- <a href="lista-funcionarios.html"> -->
+               <div class="body-under"><button class="body-under" type="button" style="border:none; background: transparent; outline: 0; cursor: pointer" id="delete">Excluir</button></div> 
+            <!-- </a>  -->
 
+           
+      
+            <!-- <a href="lista-funcionarios.html"> -->
+              <div class="button-primario">
+                <div class="h3-button"><button class="h3-button" type="button" style="border:none; background: transparent; outline: 0; cursor: pointer" id="update" >Salvar Funcionário</button></div>
+              </div>
+            
+            <!-- </a>  -->
+            </div>
+            <script>
+              document.querySelector('#update').addEventListener('click', (event) => {
+                  event.preventDefault();
+                  //capturar
+                  const funcionario = getDadosForm2();
+                  console.log(funcionario);
+                  //enviar
+                  enviarDadosParaAPI2(funcionario);
+              })
+
+              document.querySelector('#delete').addEventListener('click', (event) => {
+                  event.preventDefault();
+                  //capturar
+                  const funcionario = getDadosForm();
+                  console.log(funcionario);
+                  //enviar
+                  enviarDadosParaAPI(funcionario);
+              })
+
+            </script>
             <!-- <button class="h3-button" type="button" style="border:none; background: transparent; outline: 0; cursor: pointer" id="salvar" onClick="console.log('aaaa')">Adicionar Funcionário</button> -->
             
          
