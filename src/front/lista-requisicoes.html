@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de requisições</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="../js/procurarReq.js" defer></script>
+    <script src="../js/procurarCPF.js" defer></script>
 </head>
 <body>
   <header class="main-header">
@@ -92,7 +94,7 @@
           </input>
         </div>
         <div class="button-buscar">
-          <button class="h3-button" type="button" style="border:none; background: transparent; outline: 0; cursor: pointer" id="salvar">Buscar</button>
+          <button class="h3-button" type="button" style="border:none; background: transparent; outline: 0; cursor: pointer" id="procurarReq">Buscar</button>
           <svg
             class="icon"
             width="24"
@@ -112,7 +114,7 @@
           </input>
         </div>
         <div class="button-buscar">
-          <button class="h3-button" type="button" style="border:none; background: transparent; outline: 0; cursor: pointer" id="salvar">Buscar</button>
+          <button class="h3-button" type="button" style="border:none; background: transparent; outline: 0; cursor: pointer" id="procurarCPF">Buscar</button>
           <svg
             class="icon"
             width="24"
@@ -130,7 +132,26 @@
       </div>
     </div>
   
-    <div class="lista">
+    <div class="lista" id="todosOsProdutos">
+      <!-- <div class="header-lista">
+        <div class="body-bold">Nome</div>
+  
+        <div class="body-bold">CPF</div>
+  
+        <div class="body-bold">Sexo</div>
+
+        <div class="body-bold">Data de Nascimento</div>
+  
+        <div class="body-bold">Endereço</div>
+
+        <div class="body-bold">Salário</div>
+
+        <div class="body-bold">Tipo de Contrato</div> -->
+        
+      </div>
+
+
+    <!-- <div class="lista">
       <div class="header-lista">
         <div class="body-bold">ID</div>
   
@@ -154,10 +175,32 @@
   
         <div class="body-lista">111.111.111-11</div>
       </div>
-    </div>
+    </div> -->
   </div>
   
-    
+    <script>
+document.querySelector('#procurarReq').addEventListener('click', (event) => {
+      event.preventDefault();
+      //capturar
+      const funcionario = getDadosReq();
+      // funcionario_cpf
+      console.log(funcionario);
+      //enviar
+      enviarDadosParaAPI2(funcionario);
+  })
+
+  document.querySelector('#procurarCPF').addEventListener('click', (event) => {
+      event.preventDefault();
+      //capturar
+      const funcionario = getDadosCPF();
+      console.log(funcionario);
+      //enviar
+      enviarDadosParaAPI(funcionario);
+  })
+
+
+    </script>
+
 
 </body>
 </html>
