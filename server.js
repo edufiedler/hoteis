@@ -1,6 +1,5 @@
 const express = require('express')
 const cors = require('cors')
-const productsRoutes = require('./src/products/routes');
 const funcionariosRoutes = require('./src/funcionarios/routes')
 const requisicoesRoutes = require('./src/requisicoes/routes')
 
@@ -14,8 +13,6 @@ app.use(express.json());
 app.get("/", (req, res) => {
     res.send("Hello World!!!");
 })
-
-app.use('/api/v1/hoteis', productsRoutes);
 
 app.use('/funcionarios', funcionariosRoutes);
 

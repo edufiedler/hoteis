@@ -1,4 +1,4 @@
-const btn = document.querySelector('#update')
+// const btn = document.querySelector('#update')
 
 function getDadosForm2(){
     

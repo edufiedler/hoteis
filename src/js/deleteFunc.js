@@ -1,14 +1,14 @@
-const btn2 = document.querySelector('#delete')
+// const btn2 = document.querySelector('#delete')
 
-function getDadosForm(){
-    const ifuncionario_cpf = document.querySelector('#funcionario_cpf')
+// function getDadosForm(){
+//     const ifuncionario_cpf = document.querySelector('#funcionario_cpf')
     
-    const funcionario = {
-        funcionario_cpf: ifuncionario_cpf.value,
-    }
-    return funcionario
+//     const funcionario = {
+//         funcionario_cpf: ifuncionario_cpf.value,
+//     }
+//     return funcionario
 
-}
+// }
 
 async function enviarDadosParaAPI(funcionario){
     const resposta = await fetch(`http://localhost:3000/funcionarios/${funcionario.funcionario_cpf}`, {
