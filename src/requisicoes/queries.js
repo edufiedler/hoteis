@@ -5,7 +5,7 @@ const getFuncbyReq = "SELECT * FROM public.funcionario where funcionario_cpf in 
 const addFuncinReq = "INSERT INTO public.recebe_requisicao(funcionario_cpf, requisicao_id) VALUES ($1, $2)";
 const getReqbyId = "SELECT * FROM public.requisicao WHERE requisicao_id = $1";
 const addReq = "INSERT INTO public.requisicao (requisicao_id, tipo, dataabertura, datafechamento, status, textolivre, funcionario_cpf, cliente_id) VALUES ($1, 'F', $2, $3, $4, $5, $6, NULL)";
-const atualizarReq = "UPDATE public.requisicao SET dataabertura = $1, datafechamento = $2, status = $3, textolivre = $4, funcionario_cpf = $5, cliente_id = $6 WHERE requisicao_id = $7";
+const atualizarReq = "UPDATE public.requisicao SET dataabertura = $1, datafechamento = $2, status = $3, textolivre = $4, funcionario_cpf = $5, cliente_id = NULL WHERE requisicao_id = $6";
 const excluirReq = "DELETE FROM public.requisicao WHERE requisicao_id = $1";
 const verificaReq = "SELECT * FROM public.requisicao WHERE requisicao_id = $1";
 

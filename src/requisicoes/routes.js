@@ -8,7 +8,7 @@ router.get('/func/:funcionario_cpf', controller.getReqbyFunc); // pega o cpf do 
 router.get('/req/:requisicao_id', controller.getFuncbyReq); // pega a requisiçao do ID
 router.post("/", controller.addReq);
 router.put("/:requisicao_id",controller.atualizarRequi);
-router.delete("/:requisicao_id", controller.excluiRequi);
+router.delete("/:requisicao_id", controller.excluirRequi);
 
 
 module.exports = router;
