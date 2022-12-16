@@ -173,18 +173,14 @@
                   event.preventDefault();
                   //capturar
                   const funcionario = getDadosForm2();
-                  console.log(funcionario);
                   //enviar
                   enviarDadosParaAPI2(funcionario);
               })
 
               document.querySelector('#delete').addEventListener('click', (event) => {
                   event.preventDefault();
-                  //capturar
-                  const funcionario = getDadosForm3();
-                  console.log(funcionario);
-                  //enviar
-                  enviarDadosParaAPI3(funcionario);
+                  
+                  enviarDadosParaAPI3();
               })
 
             </script>
