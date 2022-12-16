@@ -55,7 +55,7 @@ async function exibeResul(resultado){
     const tabela = `<div class="header-lista">
     <div class="body-bold">Nome</div>
 
-    <div class="body-bold">CPF</div>
+    <div class="body-bold">CPF do atendente</div>
 
     <div class="body-bold">Sexo</div>
 
