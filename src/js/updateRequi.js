@@ -27,7 +27,7 @@ async function enviarDadosParaAPI2(requisicao){
             Accept: 'application/json',
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(funcionario)
+        body: JSON.stringify(requisicao)
     })
     if(resposta.status === 200){
         window.location.href = 'lista-requisicoes.html'
