@@ -26,13 +26,13 @@ const getFuncbyReq = (req,res) => {
 
 
 const addReq = (req, res) => {
-    const { requisicao_id, tipo, dataabertura, datafechamento, status, textolivre, funcionario_cpf, cliente_id } = req.body;
+    const { requisicao_id, tipo, dataabertura, datafechamento, status, textolivre, funcionario_cpf } = req.body;
 
     pool.query(queries.verificaReq, [requisicao_id], (error, results) => {
          if (results.rows.length) {
              res.send("Id de requisição já existente, não foi possível criar.")
          }
-        pool.query(queries.addReq, [requisicao_id, tipo, dataabertura, datafechamento, status, textolivre, funcionario_cpf, cliente_id], (error, results) => {
+        pool.query(queries.addReq, [requisicao_id, tipo, dataabertura, datafechamento, status, textolivre, funcionario_cpf], (error, results) => {
             if (error) throw error;
             res.status(201).send("Requisição adicionada");
         })
