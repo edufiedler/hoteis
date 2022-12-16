@@ -28,7 +28,8 @@ function getDadosForm(){
         datafechamento: idatafechamento.value,
         status: istatus.value,
         textolivre: itextolivre.value,
-        funcionario_cpf: ifuncionario_cpf.value
+        funcionario_cpf: ifuncionario_cpf.value,
+        cliente_id: NULL
     }
     return requisicao
 
