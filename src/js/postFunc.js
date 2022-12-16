@@ -7,7 +7,7 @@ btn.addEventListener('click', () => {
     enviarDadosParaAPI(funcionario);
 })
 
-function loadPostFunc() {
+function loadFunc() {
     var url = new URL(window.location.href);
     document.querySelector('#funcionario_cpf').value = url.searchParams.get("funcionario_cpf");
 }

@@ -7,7 +7,7 @@ btn.addEventListener('click', () => {
     enviarDadosParaAPI(requisicao);
 })
 
-function loadPostRequi() {
+function loadRequi() {
     var url = new URL(window.location.href);
     document.querySelector('#requisicao_id').value = url.searchParams.get("requi_id");
 }
