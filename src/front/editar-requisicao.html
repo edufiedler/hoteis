@@ -166,12 +166,33 @@
           </div>
         </div>
 
-      <div class="actions-adicionar">
+      <div class="actions-edit">
+        <div class="body-under"><button class="body-under" type="button" style="border:none; background: transparent; outline: 0; cursor: pointer" id="delete">Excluir</button></div> 
+
         <div class="button-primario">
-          <button class="h3-button" type="button" style="border:none; background: transparent; outline: 0; cursor: pointer" id="salvar" onClick="console.log('aaaa')">Salvar requisição</button>
+          <button class="h3-button" type="button" style="border:none; background: transparent; outline: 0; cursor: pointer" id="update">Salvar requisição</button>
           <!--<div class="h3-button">Adicionar funcionário</div>-->
         </div>
       </div>
+
+      <script>
+        document.querySelector('#update').addEventListener('click', (event) => {
+            event.preventDefault();
+            //capturar
+            const requisicao = getDadosForm2();
+            //enviar
+            enviarDadosParaAPI2(requisicao);
+        })
+
+        document.querySelector('#delete').addEventListener('click', (event) => {
+            event.preventDefault();
+            //capturar
+            const requisicao = getDadosForm();
+            //enviar
+            enviarDadosParaAPI(requisicao);
+        })
+
+      </script>
     
   </div>
 </form>
