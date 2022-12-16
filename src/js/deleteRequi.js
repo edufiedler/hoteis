@@ -19,6 +19,6 @@ async function enviarDadosParaAPI3(requicao){
        body: JSON.stringify(requicao)
    })
    if(resposta.status === 200){
-       window.location.href = 'lista-requicoes.html'
+       window.location.href = 'lista-requisicoes.html'
    } else console.log('Erro ao apagar requicao')
 }  
