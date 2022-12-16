@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="../js/updateFunc.js"></script>
     <script src="../js/deleteFunc.js"></script>  
-    <script src="../js/postFunc.js" defer></script>
+    <script src="../js/postFunc.js"></script>  
 
 
     </head>
@@ -181,10 +181,10 @@
               document.querySelector('#delete').addEventListener('click', (event) => {
                   event.preventDefault();
                   //capturar
-                  const funcionario = getDadosForm();
+                  const funcionario = getDadosForm3();
                   console.log(funcionario);
                   //enviar
-                  enviarDadosParaAPI(funcionario);
+                  enviarDadosParaAPI3(funcionario);
               })
 
             </script>
