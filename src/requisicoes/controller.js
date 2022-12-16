@@ -40,7 +40,29 @@ const addReq = (req, res) => {
 
 }
 
+const excluiRequi = (req, res) => {
+    const requisicao_id = req.params.requisicao_id;
+    pool.query(queries.verificaReq, [requisicao_id], (error, results) => {
+        const semRequi = !results.rows.length;
+        if (semRequi) res.send("Requisição não existe, não deletada");
+        pool.query(queries.excluiRequi, [requisicao_id], (error, results) =>{
+            if(error) throw error;
+            res.status(200).send("Requisição deletado com sucesso");
+        })
+    })
+}
 
+const atualizarRequi = (req, res) => {
+    const { requisicao_id, dataabertura, datafechamento, status, textolivre, funcionario_cpf } = req.body;
+    pool.query(queries.verificaReq, [requisicao_id], (error, results) => {
+         const semFunc = !results.rows.length;
+         if (semFunc) res.send("Requisição não existe");
+        pool.query(queries.atualizarReq, [requisicao_id, dataabertura, datafechamento, status, textolivre, funcionario_cpf], (error, results) => {
+            if(error) throw error;
+            res.status(200).send("Requisição atualizada");
+        })
+    })
+}
 
 
 module.exports = {
@@ -48,4 +70,6 @@ module.exports = {
     addReq,
     getReqbyFunc,
     getFuncbyReq,
+    atualizarRequi,
+    excluiRequi
 };
