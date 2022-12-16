@@ -26,7 +26,7 @@ async function consultaTodosOsProdutos(){
         <div class="body-lista"> ${funcionario.salario} </div>
         <div class="body-lista"> ${funcionario.tipodecontrato}</div>
         
-          <a href="editar-funcionario.html">
+          <a href="editar-funcionario.html?funcionario_cpf=${funcionario.funcionario_cpf}">
           <svg
             class="icon"
             width="120"
