@@ -14,17 +14,16 @@
 function getDadosReq(){
   const irequisicao_id = document.querySelector('#requisicao_id')
   
-  const requisicao = {
-    requisicao_id: irequisicao_id.value,
-  }
-  
-  return requisicao
+  if(irequisicao_id.value.length == 0)
+    return {requisicao_id: ''}
+  else
+    return {requisicao_id: irequisicao_id.value}
 }
 
 async function enviarDadosParaAPI2(requisicao){
   let resultado;
 
-  //if(isNaN(requisicao.requisicao_id)) {
+  if(requisicao.requisicao_id == '') {
     const resp = await fetch(`http://localhost:3000/requisicoes`, {
         method: 'GET',
         headers: {
@@ -34,7 +33,6 @@ async function enviarDadosParaAPI2(requisicao){
     })
 
     resultado = await resp.json();
-  /*
   } else {
     const resp = await fetch(`http://localhost:3000/requisicoes/req/${requisicao.requisicao_id}`, {
         method: 'GET',
@@ -45,7 +43,7 @@ async function enviarDadosParaAPI2(requisicao){
     })
 
     resultado = await resp.json();
-  }*/
+  }
 
   exibeResul(resultado);
 }   
