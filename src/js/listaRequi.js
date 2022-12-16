@@ -37,7 +37,7 @@ function mostraRequisicoes(resultado) {
         <div class="body-lista">${requisicao.dataabertura} </div>
         <div class="body-lista"> ${requisicao.status} </div>
         <div class="body-lista"> ${requisicao.textolivre} </div>
-        <a href="editar-funcionario.html?requi_id=${requisicao.requisicao_id}">
+        <a href="editar-requisicao.html?requi_id=${requisicao.requisicao_id}">
           <svg
             class="icon"
             width="120"
