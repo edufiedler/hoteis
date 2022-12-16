@@ -4,11 +4,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Adicionar Funcionário</title>
+  <title>Editar Requisição</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
-  <script src="../js/postFunc.js" defer></script>
+  <script src="../js/updateRequi.js"></script>
+  <script src="../js/deleteRequi.js"></script>
+  <script src="../js/postRequi.js" defer></script>
 </head>
-<body>
+<body onload="loadRequi()">
   <header class="main-header">
     <div class="header">
       <a href="hotel.html"><div class="h2">Gerenciamento de Hotéis</div></a>        
@@ -86,7 +88,7 @@
   </header>
   <form>
   <div class="div-1">
-    <a href="lista-funcionarios.html">
+    <a href="lista-requisicoes.html">
     <div class="voltar">
       <svg
         class="icon"
@@ -103,52 +105,87 @@
       </svg>
       <div class="h3">Voltar</div>
     </div>
-  </a>
+</a>
      
       <div class="bloco-primario">
-      <div class="h2">Dados pessoais</div>
+      <div class="h2">Informações</div>
       
+      <!--(requisicao_id, tipo, dataabertura, datafechamento, status, textolivre, funcionario_cpf, cliente_id)-->
 
       <div class="bloco-secundario">
         <div class="text-fields">
           <div class="bloco-top">
-            <div class="text-field">
-              <input class="body-text-field" style="border:none; background: transparent; outline: 0;" type="text" id="nom_pnome" name = "nom_pnome" placeholder="Primeiro nome">
+            <div class="text-field-with-label">
+                <div class="h3">ID</div>
+                <div class="text-field">
+                    <input class="body-text-field" style="border:none; background: transparent; outline: 0;" type="text" id="requisicao_id" name = "requisicao_id" placeholder="ID">
+                </div>
             </div>
-            <div class="text-field">
-              <input type="text" id="nom_snome" class="body-text-field" style="border:none; background: transparent; outline: 0;" name = "nom_snome" placeholder="Sobrenome">
+            <div class="text-field-with-label">
+              <div class="h3">Data de fechamento</div>
+              <div class="text-field">
+                  <input type="date" id="datafechamento" class="body-text-field" style="border:none; background: transparent; outline: 0;" name = "datafechamento" placeholder="Data fechamento">
+              </div>
             </div>
-          <div class="text-field">
-            <input type="text" id="funcionario_cpf" class="body-text-field" style="border:none; background: transparent; outline: 0;" name = "funcionario_cpf" placeholder="CPF">
-          </div>
+
+            <div class="text-field-with-label">
+                <div class="h3">Data de abertura</div>
+                <div class="text-field">
+                    <input type="date" id="dataabertura" class="body-text-field" style="border:none; background: transparent; outline: 0;" name = "dataabertura" placeholder="Data de abertura">
+                </div>
+            </div>
           </div>
             <div class="bloco-middle">
-              <div class="text-field">
-                <input type="text" id="endereco" class="body-text-field" style="border:none; background: transparent; outline: 0;" name = "endereco" placeholder="Endereço">
+
+                <div class="text-field-with-label">
+                  <div class="h3">Status</div>
+                  <div class="text-field">
+                      <input type="text" id="status" class="body-text-field" style="border:none; background: transparent; outline: 0;" name = "status" placeholder="Status">
+                  </div>
+                </div>
+                <div class="text-field-with-label">
+                  <div class="h3">CPF funcionário</div>
+                  <div class="text-field">
+                      <input type="text" id="funcionario_cpf" class="body-text-field" style="border:none; background: transparent; outline: 0;" name = "funcionario_cpf" placeholder="CPF">
               </div>
-            <div class="text-field">
-              <input type="text" id="sexo" class="body-text-field" style="border:none; background: transparent; outline: 0;" name = "sexo" placeholder="Sexo (M ou F)">
-            </div>
-            <div class="text-field">
-              <input type="date" id="datanasc" class="body-text-field" style="border:none; background: transparent; outline: 0;" name = "datanasc">
-            </div>
-          </div>
-          <div class="bloco-bottom">
-            <div class="text-field-bottom">
-              <input type="text" id="salario" class="body-text-field" style="border:none; background: transparent; outline: 0;" name = "salario" placeholder="Salário">
-            </div>
-          <div class="text-field-bottom">
-            <input type="text" id="tipodecontrato" class="body-text-field" style="border:none; background: transparent; outline: 0;" name = "tipodecontrato" placeholder="Tipo de contrato">
-            </div>
+                </div>
+    
+                <div class="text-field-with-label">
+                  <div class="h3">Descrição</div>
+                  <div class="text-field">
+                    <input type="text" id="textolivre" class="body-text-field" style="border:none; background: transparent; outline: 0;" name = "textolivre" placeholder="Descrição">
+              </div>
+                </div>
           </div>
         </div>
-      <div class="actions-adicionar">
+
+      <div class="actions-edit">
+        <div class="body-under"><button class="body-under" type="button" style="border:none; background: transparent; outline: 0; cursor: pointer" id="delete">Excluir</button></div> 
+
         <div class="button-primario">
-          <button class="h3-button" type="button" style="border:none; background: transparent; outline: 0; cursor: pointer" id="salvar">Adicionar Funcionário</button>
-          
+          <button class="h3-button" type="button" style="border:none; background: transparent; outline: 0; cursor: pointer" id="update">Salvar requisição</button>
           <!--<div class="h3-button">Adicionar funcionário</div>-->
         </div>
       </div>
+
+      <script>
+        document.querySelector('#update').addEventListener('click', (event) => {
+            event.preventDefault();
+            //capturar
+            const requisicao = getDadosForm2();
+            //enviar
+            enviarDadosParaAPI2(requisicao);
+        })
+
+        document.querySelector('#delete').addEventListener('click', (event) => {
+            event.preventDefault();
+            //capturar
+            const requisicao = getDadosForm3();
+            //enviar
+            enviarDadosParaAPI3(requisicao);
+        })
+
+      </script>
     
   </div>
 </form>

@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Funcionários</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <script src="../js/listaFunc.js" defer></script>
-  </head>
-<body onload="consultaTodosOsFuncionarios()">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adicionar Requisição</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script src="../js/postRequi.js" defer></script>
+</head>
+<body>
   <header class="main-header">
     <div class="header">
-      <a href="hotel.html"><a href="hotel.html"><div class="h2">Gerenciamento de Hotéis</div></a></a>        
+      <a href="hotel.html"><div class="h2">Gerenciamento de Hotéis</div></a>        
         <div class="search">
           <svg
             class="seacrh-icon"
@@ -84,65 +84,73 @@
       </div>
     </div>
   </header>
+  <form>
+  <div class="div-1">
+    <a href="lista-requisicoes.html">
+    <div class="voltar">
+      <svg
+        class="icon"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M13.8302 19C13.6808 19.0005 13.5332 18.9675 13.3982 18.9035C13.2632 18.8394 13.1443 18.746 13.0502 18.63L8.22016 12.63C8.07308 12.451 7.99268 12.2266 7.99268 11.995C7.99268 11.7633 8.07308 11.5389 8.22016 11.36L13.2202 5.35997C13.3899 5.15575 13.6338 5.02733 13.8982 5.00295C14.1627 4.97857 14.4259 5.06023 14.6302 5.22997C14.8344 5.39971 14.9628 5.64362 14.9872 5.90805C15.0116 6.17247 14.9299 6.43575 14.7602 6.63997L10.2902 12L14.6102 17.36C14.7324 17.5068 14.8101 17.6855 14.834 17.875C14.8579 18.0646 14.827 18.257 14.7449 18.4295C14.6629 18.6021 14.5331 18.7475 14.371 18.8486C14.2089 18.9497 14.0212 19.0022 13.8302 19Z"
+          fill="black"
+        />
+      </svg>
+      <div class="h3">Voltar</div>
+    </div>
+</a>
+     
+      <div class="bloco-primario">
+      <div class="h2">Informações</div>
       
-    <div class="div-1">
-      <div class="actions-lista">
-        <div class="h1">Funcionários</div>
-    
-        <a href="adicionar-funcionario.html">
+      <!--(requisicao_id, tipo, dataabertura, datafechamento, status, textolivre, funcionario_cpf, cliente_id)-->
+
+      <div class="bloco-secundario">
+        <div class="text-fields">
+          <div class="bloco-top">
+            <div class="text-field">
+              <input class="body-text-field" style="border:none; background: transparent; outline: 0;" type="text" id="requisicao_id" name = "requisicao_id" placeholder="ID">
+            </div>
+          <div class="text-field">
+            <input type="date" id="dataabertura" class="body-text-field" style="border:none; background: transparent; outline: 0;" name = "dataabertura" placeholder="Data de abertura">
+          </div>
+          <div class="text-field">
+            <input type="date" id="datafechamento" class="body-text-field" style="border:none; background: transparent; outline: 0;" name = "datafechamento" placeholder="Data fechamento">
+          </div>
+          </div>
+            <div class="bloco-middle">
+              
+            <div class="text-field">
+              <input type="text" id="status" class="body-text-field" style="border:none; background: transparent; outline: 0;" name = "status" placeholder="Status (Aberta ou Fechada)">
+            </div>
+            <div class="text-field">
+              <input type="text" id="funcionario_cpf" class="body-text-field" style="border:none; background: transparent; outline: 0;" name = "funcionario_cpf" placeholder="CPF do atendente">
+            </div>
+            <div class="text-field">
+              <input type="text" id="textolivre" class="body-text-field" style="border:none; background: transparent; outline: 0;" name = "textolivre" placeholder="Descrição">
+            </div>
+          </div>
+        </div>
+
+      <div class="actions-adicionar">
         <div class="button-primario">
-          <svg
-            class="icon"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M12 19C11.7167 19 11.4793 18.904 11.288 18.712C11.096 18.5207 11 18.2833 11 18V13H6C5.71667 13 5.479 12.904 5.287 12.712C5.09567 12.5207 5 12.2833 5 12C5 11.7167 5.09567 11.479 5.287 11.287C5.479 11.0957 5.71667 11 6 11H11V6C11 5.71667 11.096 5.479 11.288 5.287C11.4793 5.09567 11.7167 5 12 5C12.2833 5 12.521 5.09567 12.713 5.287C12.9043 5.479 13 5.71667 13 6V11H18C18.2833 11 18.5207 11.0957 18.712 11.287C18.904 11.479 19 11.7167 19 12C19 12.2833 18.904 12.5207 18.712 12.712C18.5207 12.904 18.2833 13 18 13H13V18C13 18.2833 12.9043 18.5207 12.713 18.712C12.521 18.904 12.2833 19 12 19Z"
-              fill="white"
-            />
-          </svg>
-    
-          <div class="h3-button">Novo funcionário</div>
+          <button class="h3-button" type="button" style="border:none; background: transparent; outline: 0; cursor: pointer" id="salvar" onClick="console.log('aaaa')">Adicionar Requisição</button>
+          <!--<div class="h3-button">Adicionar funcionário</div>-->
         </div>
-      </a>
-    </div>
-    
-      <div class="lista" id="todosOsProdutos">
-        <div class="header-lista">
-          <div class="body-bold">Nome</div>
-    
-          <div class="body-bold">CPF</div>
-    
-          <div class="body-bold">Sexo</div>
-
-          <div class="body-bold">Data de Nascimento</div>
-    
-          <div class="body-bold">Endereço</div>
-
-          <div class="body-bold">Salário</div>
-
-          <div class="body-bold">Tipo de Contrato</div>
-
-          <div class="body-bold">Alterar</div>
-          
-        </div>
-        
-        <!--<div id="todosOsProdutos"></div>-->
-
-        
-
-
-
-
       </div>
-    </div>
-    <!--<button id="consultarTodosOsProdutos" class="favorite styled" type="button" onclick="consultaTodosOsProdutos()">
-      Todos os produtos cadastrados </button>-->
-      
-      
+    
+  </div>
+</form>
+</div>
+
+</div>
+    
+
 
 </body>
 </html>

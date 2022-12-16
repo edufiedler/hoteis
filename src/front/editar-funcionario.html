@@ -7,12 +7,12 @@
     <title>Editar Funcionário</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="../js/updateFunc.js"></script>
-     <script src="../js/deleteFunc.js"></script>  
-    
+    <script src="../js/deleteFunc.js"></script>  
+    <script src="../js/postFunc.js"></script>  
 
 
     </head>
-<body>
+<body onload="loadFunc()">
   <header class="main-header">
     <div class="header">
       <a href="hotel.html"><div class="h2">Gerenciamento de Hotéis</div></a>        
@@ -173,18 +173,15 @@
                   event.preventDefault();
                   //capturar
                   const funcionario = getDadosForm2();
-                  console.log(funcionario);
                   //enviar
                   enviarDadosParaAPI2(funcionario);
               })
 
               document.querySelector('#delete').addEventListener('click', (event) => {
-                  event.preventDefault();
-                  //capturar
-                  const funcionario = getDadosForm();
-                  console.log(funcionario);
-                  //enviar
-                  enviarDadosParaAPI(funcionario);
+                event.preventDefault();
+
+                  const funcionario = getDadosForm3();
+                  enviarDadosParaAPI3(funcionario);
               })
 
             </script>

@@ -7,6 +7,11 @@ btn.addEventListener('click', () => {
     enviarDadosParaAPI(funcionario);
 })
 
+function loadFunc() {
+    var url = new URL(window.location.href);
+    document.querySelector('#funcionario_cpf').value = url.searchParams.get("funcionario_cpf");
+}
+
 function getDadosForm(){
     const inom_pnome = document.querySelector('#nom_pnome')
     const inom_snome = document.querySelector('#nom_snome')
