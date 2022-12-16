@@ -19,4 +19,5 @@ module.exports = {
     addReq,
     atualizarReq,
     excluirReq,
+    verificaReq
 }
