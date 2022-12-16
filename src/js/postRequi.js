@@ -7,6 +7,11 @@ btn.addEventListener('click', () => {
     enviarDadosParaAPI(requisicao);
 })
 
+function loadPostRequi() {
+    var url = new URL(window.location.href);
+    document.querySelector('#requisicao_id').value = url.searchParams.get("requi_id");
+}
+
 function getDadosForm(){
     const iid = document.querySelector('#requisicao_id')
     const itipo = document.querySelector('#tipo')
