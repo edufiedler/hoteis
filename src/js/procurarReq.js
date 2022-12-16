@@ -36,9 +36,9 @@ async function enviarDadosParaAPI2(requisicao){
 
 
       const tabela = `<div class="header-lista">
-      <div class="body-bold">Nome</div>
+      <div class="body-bold">Nome Atendente</div>
 
-      <div class="body-bold">CPF</div>
+      <div class="body-bold">CPF Atendente</div>
 
       <div class="body-bold">Sexo</div>
 

@@ -16,9 +16,9 @@ function mostraRequisicoes(resultado) {
 
 
       const tabela = `<div class="header-lista">
-      <div class="body-bold">ID</div>
+      <div class="body-bold">ID Requisição</div>
 
-      <div class="body-bold">Tipo</div>
+      <div class="body-bold">Tipo Requisição</div>
 
       <div class="body-bold">Data de Abertura</div>
 
