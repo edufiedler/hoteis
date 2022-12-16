@@ -25,6 +25,8 @@ function mostraRequisicoes(resultado) {
       <div class="body-bold">Status</div>
 
       <div class="body-bold">Texto Livre</div>
+
+      <div class="body-bold">Ações</div>
     </div>`;
       document.getElementById("todosOsProdutos").innerHTML=document.getElementById("todosOsProdutos").innerHTML+tabela; 
       
