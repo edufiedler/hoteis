@@ -8,8 +8,7 @@ async function enviarDadosParaAPI3(){
         headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(funcionario)
+        }
     })
     if(resposta.status === 200){
         window.location.href = 'lista-funcionarios.html'
