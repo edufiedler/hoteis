@@ -3,7 +3,7 @@ const url = 'http://localhost:3000/funcionarios/'
 
 const todosOsProdutos = document.querySelector("#todosOsProdutos")
 
-async function consultaTodosOsProdutos(){
+async function consultaTodosOsFuncionarios(){
     const resp = await fetch(url, {
         method: 'GET',
         headers: {
