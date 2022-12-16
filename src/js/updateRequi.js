@@ -2,7 +2,6 @@
 
 function getDadosForm2(){
     const iid = document.querySelector('#requisicao_id')
-    const itipo = document.querySelector('#tipo')
     const idataabertura = document.querySelector('#dataabertura')
     const idatafechamento = document.querySelector('#datafechamento')
     const istatus = document.querySelector('#status')
@@ -11,7 +10,6 @@ function getDadosForm2(){
     
     const requisicao = {
         requisicao_id: iid.value,
-        tipo: itipo.value,
         dataabertura: idataabertura.value,
         datafechamento: idatafechamento.value,
         status: istatus.value,
